@@ -4,10 +4,11 @@ import { NavbarComponent } from './shared/navbar/navbar';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, NavbarComponent],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  template:`
+  <app-navbar></app-navbar>
+  <router-outlet></router-outlet>
+  `
 })
-export class AppComponent {
-  protected readonly title = signal('BuildWise');
-}
+export class AppComponent {}
